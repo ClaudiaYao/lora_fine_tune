@@ -1,0 +1,6 @@
+# Shared by both environments (see requirements-hf.txt / requirements-unsloth.txt).
+matplotlib
+numpy
+datasets
+boto3
+python-dotenv

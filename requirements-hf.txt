@@ -1,0 +1,8 @@
+# Transformers + PEFT environment (.venv-hf), latest releases. Do not install unsloth here: it pulls in
+# torchao, which can conflict with peft's LoRA dispatch.
+# Exact versions that were installed are recorded in requirements-lock-hf.txt (see setup_venvs.sh).
+-r requirements.txt
+torch
+transformers
+peft
+accelerate

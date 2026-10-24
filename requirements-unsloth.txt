@@ -1,0 +1,4 @@
+# Unsloth environment (.venv-unsloth). Unsloth pins its own transformers/peft/trl/torch versions,
+# so leave those unpinned here.
+-r requirements.txt
+unsloth
