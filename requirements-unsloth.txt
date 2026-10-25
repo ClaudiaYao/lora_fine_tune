@@ -2,3 +2,4 @@
 # so leave those unpinned here.
 -r requirements.txt
 unsloth
+unsloth_zoo

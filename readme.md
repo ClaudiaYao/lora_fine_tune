@@ -4,8 +4,6 @@ Transformers+PEFT and Unsloth need different package versions, so each gets its 
 
 ```
 ./setup_venvs.sh            # both
-source .venv-hf/bin/activate        # for train-transformer.py / inference-transformer.py
-source .venv-unsloth/bin/activate   # for train-unsloth.py / inference-unsloth.py
 ```
 
 ## generate dataset
@@ -13,30 +11,24 @@ source .venv-unsloth/bin/activate   # for train-unsloth.py / inference-unsloth.p
 You could use either virtual environment. Fill in correct info in .env first.
 
 ```
+source .venv-hf/bin/activate
 python generate_data.py
 ```
 
-## run train-xx.py
+## workflow on transformer+PEFT
 
 ```
 source .venv-hf/bin/activate
-python train-transformer.py --max-samples=20 --epochs=1
-```
-
-```
-source .venv-unsloth/bin/activate
-python train-unsloth.py --max-samples=400 --epochs=25
-```
-
-## run inference-xx.py
-
-```
-source .venv-hf/bin/activate
+python train-transformer.py --epochs=20
 python inference-transformer.py --prompts-file data/eval_prompts.txt --compare-base
 ```
 
+## workflow on Unsloth
+
 ```
 source .venv-unsloth/bin/activate
+pip install --upgrade unsloth unsloth_zoo
+python train-unsloth.py --epochs=20
 python inference-unsloth.py --prompts-file data/eval_prompts.txt --compare-base
 ```
 
